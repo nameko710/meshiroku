@@ -1,0 +1,9 @@
+<%= link_to "冷蔵庫の中身を確認する", fridges_path %>
+
+<%= form_with(model: @fridges, local: true) do |form| %>
+   <%= form.text_field :food, placeholder: "食品名" %>
+      <%= form.text_field :amount, placeholder: "数量" %>
+      <%= form.text_field :unit, placeholder: "単位" %>
+      <%= form.text_field :price, placeholder: "値段" %>
+      <%= form.submit "冷蔵庫に入れる" %>
+<% end %>
