@@ -1,0 +1,11 @@
+<%= link_to "冷蔵庫", new_fridge_path, class: "post" %>
+
+<ul class='food-lists'>
+  <% @fridges.each do |fridge| %>
+    <li class='list'>
+      <%= fridge.food %>
+      <%= fridge.amount %><%= fridge.unit %>
+      <%= fridge.price %>円
+    </li>
+  <% end %>
+</ul>

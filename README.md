@@ -29,13 +29,14 @@ Things you may want to cover:
 
 ## fridges テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | -------------------------------|
-| food    | string     | null: false                    |
-| amount  | integer    | null: false                    |
-| unit    | string     | null: false                    |
-| price   | integer    | null: false                    |
-| user    | references | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | -------------------------------|
+| food        | string     | null: false                    |
+| amount      | float      | null: false                    |
+| unit        | string     | null: false                    |
+| price       | integer    | null: false                    |
+| availability| boolean    | null: false                    |
+| user        | references | null: false, foreign_key: true |
 
 - belongs_to :user
 
