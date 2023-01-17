@@ -4,12 +4,12 @@ class FridgesController < ApplicationController
   end
 
   def new
-    @fridges = Fridge.new
+    @form = Form::FridgeCollection.new
   end 
 
   def create
-    @fridge = Fridge.new(fridge_params)
-    if @fridge.save
+    @form = Form::FridgeCollection.new(fridge_collection_params)
+    if @form.save
       redirect_to action: :index
     else
       render :new
@@ -17,8 +17,9 @@ class FridgesController < ApplicationController
   end
 
   private
-  def fridge_params
-    params.require(:fridge).permit(:food, :amount, :unit, :price).merge(user_id: current_user.id)
+  def fridge_collection_params
+    params.require(:form_fridge_collection)
+    .permit(fridges_attributes: [:availability, :food, :amount, :unit, :price]).merge(user_id: current_user.id)
   end
 
 end

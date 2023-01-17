@@ -13,8 +13,9 @@
 ActiveRecord::Schema.define(version: 2023_01_16_023748) do
 
   create_table "fridges", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.boolean "availability"
     t.string "food", null: false
-    t.integer "amount", null: false
+    t.float "amount", null: false
     t.string "unit", null: false
     t.integer "price", null: false
     t.bigint "user_id", null: false
