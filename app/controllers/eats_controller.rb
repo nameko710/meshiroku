@@ -1,4 +1,8 @@
 class EatsController < ApplicationController
+  def index
+    @eats = Eat.all
+  end
+  
   def new
     @eat = Eat.new
   end
