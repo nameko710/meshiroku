@@ -1,0 +1,2 @@
+class Eat < ApplicationRecord
+end
