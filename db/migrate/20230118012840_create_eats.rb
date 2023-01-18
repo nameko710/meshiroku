@@ -4,7 +4,7 @@ class CreateEats < ActiveRecord::Migration[6.0]
       t.string :title,         null: false
       t.integer :price,        null: false
       t.text :comment
-      t.date :string,          null: false
+      t.date :date,          null: false
       t.references :user,      null: false, foreign_key: true
       t.timestamps
     end

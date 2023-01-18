@@ -1,0 +1,10 @@
+<%= link_to "戻る", fridges_path %>
+
+<%= form_with model: @eat, url: eats_path, method: :post, local: true do |form| %>
+  <%= form.text_field :title, placeholder: "タイトル" %>
+  <%= form.file_field :image, placeholder: "写真を選ぶ" %>
+  <%= form.text_field :price, placeholder: "値段" %>
+  <%= form.text_field :comment, placeholder: "コメント" %>
+  <%= form.date_field :date,  placeholder: "日付" %>
+  <%= form.submit "投稿する" %>
+<% end %>
