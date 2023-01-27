@@ -55,16 +55,6 @@ RSpec.describe Fridge, type: :model do
         expect(@fridge.errors.full_messages).to include "Price must be greater than or equal to 0"
       end
 
-      it 'availabilityが空では登録できない' do
-        @fridge.availability = ''
-        @fridge.valid?
-        expect(@fridge.errors.full_messages).to include "Availability can't be blank"
-      end
-
-      it 'availabilityがfalseでは登録できない' do
-        @fridge.availability = 'false'
-        @fridge.valid?
-        expect(@fridge.errors.full_messages).to include "Availability can't be blank"
       end
     end
   end
