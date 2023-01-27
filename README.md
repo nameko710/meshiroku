@@ -35,7 +35,6 @@ Things you may want to cover:
 | amount      | float      | null: false                    |
 | unit        | string     | null: false                    |
 | price       | integer    | null: false                    |
-| availability| boolean    | null: false                    |
 | user        | references | null: false, foreign_key: true |
 
 - belongs_to :user
