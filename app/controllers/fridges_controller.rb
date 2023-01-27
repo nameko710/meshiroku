@@ -19,7 +19,7 @@ class FridgesController < ApplicationController
   private
   def fridge_collection_params
     params.require(:form_fridge_collection)
-    .permit(fridges_attributes: [:availability, :food, :amount, :unit, :price]).merge(user_id: current_user.id)
+    .permit(fridges_attributes: [:food, :amount, :unit, :price]).merge(user_id: current_user.id)
   end
 
 end

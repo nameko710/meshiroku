@@ -1,5 +1,5 @@
 class Form::FridgeCollection < Form::Base
-  FORM_COUNT = 5
+  FORM_COUNT = 1
   attr_accessor :fridges, :user_id
 
   def initialize(attributes = {})
@@ -14,10 +14,8 @@ class Form::FridgeCollection < Form::Base
   def save
     Fridge.transaction do
       self.fridges.map do |fridge|
-        if fridge.availability
-          fridge["user_id"] = user_id
-          fridge.save
-        end
+        fridge["user_id"] = user_id
+        fridge.save
       end
     end
       return true

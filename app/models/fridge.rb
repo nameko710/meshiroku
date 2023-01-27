@@ -2,7 +2,6 @@ class Fridge < ApplicationRecord
   belongs_to :user
 
   with_options presence: true do
-    validates :availability, inclusion: { in: [true] }
     validates :food
     validates :amount, numericality: {greater_than: 0}
     validates :unit
