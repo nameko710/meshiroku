@@ -1,4 +1,6 @@
 <%= link_to "冷蔵庫", new_fridge_path, class: "post" %>
+<%= link_to "食事を記録する", new_eat_path, class: "post" %>
+<%= link_to "食事記録を確認する", eats_path %>
 
 <ul class='food-lists'>
   <% @fridges.each do |fridge| %>

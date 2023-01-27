@@ -1,6 +1,6 @@
 class FridgesController < ApplicationController
   def index
-    @fridges = Fridge.all
+    @fridges = current_user.fridges
   end
 
   def new

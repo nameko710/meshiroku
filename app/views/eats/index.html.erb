@@ -1,0 +1,10 @@
+<%= link_to "戻る", fridges_path %>
+
+<ul class='eat-lists'>
+  <% @eats.each do |eat| %>
+    <li class='list'>
+      <%= eat.title %>
+      <%= image_tag eat.image.variant(resize: '200x200') %>
+    </li>
+  <% end %>
+</ul>
