@@ -1,0 +1,72 @@
+/* ==========================================================================
+ * Base
+ * ========================================================================== */
+/*
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom. */
+ html {
+  font-family: 'Roboto';
+  font-size: 15px;
+}
+
+/*
+ * Remove default margin. */
+body {
+  margin: 0;
+  background-color: #CFF6DA;
+}
+
+/* ==========================================================================
+ * header
+ * ========================================================================== */
+
+ div.header__bar.row{
+  background-color: #69B587;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ h1.grid-6{
+  font-size: 200%;
+  font-weight: bold;
+  color: #CFF6DA;
+  padding: 0px 20px;
+ }
+
+ header.header .user_nav ul li a {
+  padding: 0px 20px;
+  text-align: left;
+  color: #CFF6DA;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+ * マイページ
+ * ========================================================================== */
+
+ div.my__menu__title{
+  font-size: 120%;
+  font-weight: bold;
+  color: #69B587;
+  margin: 30px;
+ }
+
+ div.my__menu__list{
+  font-size: 120%;
+  font-weight: bold;
+  margin: 30px;
+ }
+
+ div.my__menu__list ul li a{
+  color: #69B587;
+  text-decoration: none;
+ }
+
+ div.my__menu__list ul li{
+  padding-top: 5px;
+  padding-bottom: 5px;
+ }
