@@ -17,6 +17,10 @@ body {
   background-color: #CFF6DA;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* ==========================================================================
  * header
  * ========================================================================== */
@@ -70,3 +74,47 @@ body {
   padding-top: 5px;
   padding-bottom: 5px;
  }
+
+ /* ==========================================================================
+ * 冷蔵庫
+ * ========================================================================== */
+
+  div.fridge__main{
+    margin: 0 30px 30px 30px;
+    padding: 30px;
+    background-color: #F1F8F2;
+    height: 80vh;
+    width: 600px;
+    border-radius: 40px;
+    overflow: scroll;
+  }
+
+  div.title__list{
+    margin: 15px 30px 0 35px;
+    padding: 10px 30px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #69B587;
+  }
+
+  div.fridge__lists ul li {
+    padding: 5px 15px;
+    color: #69B587;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid #69B587;
+  }
+
+  p.food {
+    width: 50%;
+  }
+  p.amount {
+    width: 30%;
+  }
+  p.price {
+    width: 20%;
+  }
