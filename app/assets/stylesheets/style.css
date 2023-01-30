@@ -80,7 +80,7 @@ body {
  * ========================================================================== */
 
   div.fridge__main{
-    margin: 0 30px 30px 30px;
+    margin: 0 auto;
     padding: 30px;
     background-color: #F1F8F2;
     height: 80vh;
@@ -90,13 +90,14 @@ body {
   }
 
   div.title__list{
-    margin: 15px 30px 0 35px;
+    margin: 10px auto;
     padding: 10px 30px;
     width: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #69B587;
+    font-weight: bold;
   }
 
   div.fridge__lists ul li {
@@ -118,3 +119,98 @@ body {
   p.price {
     width: 20%;
   }
+
+  /* ==========================================================================
+ * フォーム
+ * ========================================================================== */
+
+div.btn {
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+  background-color: #69B587;
+  margin: 5px 15px 5px 10px;
+}
+
+div.btn p{
+  line-height: 30px;
+  font-size: 30px;
+  text-align:center;
+  color: #CFF6DA;
+}
+
+div.demo-minus {
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+  background-color: #69B587;
+  text-align:center;
+}
+div.demo-minus span{
+  line-height: 30px;
+  font-size: 43px;
+  color: #CFF6DA;
+  font-weight: bold;
+}
+
+div.form-main{
+  background-color: #F1F8F2;
+  width: 600px;
+  height: auto;
+  margin: 30px auto;
+}
+
+div.form-box{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  
+}
+
+.food__form{
+  width: 40%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+}
+.amount__form{
+  width: 15%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+}
+
+.unit__form{
+  width: 10%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+}
+
+.price__form{
+  width: 15%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+}
+
+div.unit {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3px 0 3px 0;
+}
+
+div.send_btn {
+ margin: 3px 5px 10px 10px;
+}
+
+.fridge__send_btn {
+  border: 2px solid #69B587;
+  background-color: #69B587;
+  color: #CFF6DA;
+  font-size: 20px;
+  border-radius: 4px;
+  margin: 30px 5px 0 0;
+  font-weight: bold;
+}
