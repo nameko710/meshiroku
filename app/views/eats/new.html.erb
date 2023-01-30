@@ -1,5 +1,3 @@
-<%= link_to "戻る", fridges_path %>
-
 <%= javascript_tag do %>
   window.fridge_objects = <%= raw @fridges.to_json %>
 <% end %>

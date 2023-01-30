@@ -1,14 +1,20 @@
-<%= link_to "冷蔵庫", new_fridge_path, class: "post" %>
-<%= link_to "食事を記録する", new_eat_path, class: "post" %>
-<%= link_to "食事記録を確認する", eats_path %>
-<%= link_to "マイページ", user_path(current_user.id) %><br>
-
-<ul class='food-lists'>
+<div class="base__view">
+<div class="title__list">
+  <p class="food">食品名</p>
+  <p class="amount">数量</p>
+  <p class="price">値段</p>
+</div>
+<div class="fridge__main">
+<div class="fridge__lists">
+<ul class='food-list'>
   <% @fridges.each do |fridge| %>
-    <li class='list'>
-      <%= fridge.food %>
-      <%= fridge.amount %><%= fridge.unit %>
-      <%= fridge.price %>円
+    <li>
+      <p class="food"><%= fridge.food %></p>
+      <p class="amount"><%= fridge.amount %><%= fridge.unit %></p>
+      <p class="price"><%= fridge.price %>円</p>
     </li>
   <% end %>
 </ul>
+</div>
+</div>
+</div>

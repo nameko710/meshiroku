@@ -1,16 +1,16 @@
-<%= link_to "冷蔵庫の中身を確認する", fridges_path %>
-<%= link_to "マイページ", user_path(current_user.id) %><br>
-
+<div class="form-main" >
+<div class="form-box" >
 <%= form_with model: @form, url: fridges_path, method: :post, local: true do |form| %>
 
 <%#以下が増加する中身%>
   <div id="demo-area" class="form-group">
     <div class="unit input-group">
       <%= form.fields_for :fridges, type:"text" do |f| %>
-        <%= f.text_field :food, type:"text", placeholder: "食品名" %>
-        <%= f.text_field :amount, type:"text", placeholder: "数量" %>
-        <%= f.text_field :unit, type:"text", placeholder: "単位" %>
-        <%= f.text_field :price, type:"text", placeholder: "値段" %>
+        <%= f.text_field :food, type:"text", placeholder: "食品名", class:"food__form" %>
+        <%= f.text_field :amount, type:"text", placeholder: "数量", class:"amount__form" %>
+        <%= f.text_field :unit, type:"text", placeholder: "単位", class:"unit__form" %>
+        <%= f.text_field :price, type:"text", placeholder: "値段", class:"price__form" %>
+        <p>円</p>
       <% end %>
       <div class="demo-minus input-group-append">
         <span class="btn btn-danger">−</span>
@@ -19,6 +19,11 @@
   </div>
 <%#ここまでが増加する中身%>
   
-  <div id="demo-plus" class="btn btn-primary">＋</div>
-    <%= form.submit "冷蔵庫に入れる" %>
+  <div id="demo-plus" class="btn btn-primary"><p>＋</p></div>
+
+
+  <div class="send_btn"> <%= form.submit "冷蔵庫に入れる", class:"fridge__send_btn" %></div>
 <% end %>
+
+  </div>
+</div>

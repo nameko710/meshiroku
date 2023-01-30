@@ -1,0 +1,282 @@
+/* ==========================================================================
+ * Base
+ * ========================================================================== */
+/*
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom. */
+ html {
+  font-family: 'Roboto';
+  font-size: 15px;
+}
+
+/*
+ * Remove default margin. */
+body {
+  margin: 0;
+  background-color: #CFF6DA;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+ * header
+ * ========================================================================== */
+
+ div.header__bar.row{
+  background-color: #69B587;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ h1.grid-6{
+  font-size: 200%;
+  font-weight: bold;
+  color: #CFF6DA;
+  padding: 0px 20px;
+ }
+
+ header.header .user_nav ul li a {
+  padding: 0px 20px;
+  text-align: left;
+  color: #CFF6DA;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+ * マイページ
+ * ========================================================================== */
+
+ div.my__menu__title{
+  font-size: 120%;
+  font-weight: bold;
+  color: #69B587;
+  margin: 30px;
+ }
+
+ div.my__menu__list{
+  font-size: 120%;
+  font-weight: bold;
+  margin: 30px;
+ }
+
+ div.my__menu__list ul li a{
+  color: #69B587;
+  text-decoration: none;
+ }
+
+ div.my__menu__list ul li{
+  padding-top: 5px;
+  padding-bottom: 5px;
+ }
+
+ /* ==========================================================================
+ * 冷蔵庫
+ * ========================================================================== */
+
+  div.fridge__main{
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #F1F8F2;
+    height: 80vh;
+    width: 600px;
+    border-radius: 40px;
+    overflow: scroll;
+  }
+
+  div.title__list{
+    margin: 10px auto;
+    padding: 10px 30px;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #69B587;
+    font-weight: bold;
+  }
+
+  div.fridge__lists ul li {
+    padding: 5px 15px;
+    color: #69B587;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 2px solid #69B587;
+  }
+
+  p.food {
+    width: 50%;
+  }
+  p.amount {
+    width: 30%;
+  }
+  p.price {
+    width: 20%;
+  }
+
+  /* ==========================================================================
+ * フォーム
+ * ========================================================================== */
+
+div.btn {
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+  background-color: #69B587;
+  margin: 5px 15px 5px 10px;
+}
+
+div.btn p{
+  line-height: 30px;
+  font-size: 30px;
+  text-align:center;
+  color: #CFF6DA;
+}
+
+div.demo-minus {
+  height: 30px;
+  width: 30px;
+  border-radius: 4px;
+  background-color: #69B587;
+  text-align:center;
+}
+div.demo-minus span{
+  line-height: 30px;
+  font-size: 43px;
+  color: #CFF6DA;
+  font-weight: bold;
+}
+
+div.form-main{
+  background-color: #F1F8F2;
+  width: 600px;
+  height: auto;
+  margin: 30px auto;
+}
+
+div.form-box{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  
+}
+
+.food__form{
+  width: 40%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+}
+.amount__form{
+  width: 15%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+}
+
+.unit__form{
+  width: 10%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+}
+
+.price__form{
+  width: 15%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+}
+
+div.unit {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3px 0 3px 0;
+}
+
+div.send_btn {
+ margin: 3px 5px 10px 10px;
+}
+
+.fridge__send_btn {
+  border: 2px solid #69B587;
+  background-color: #69B587;
+  color: #CFF6DA;
+  font-size: 20px;
+  border-radius: 4px;
+  margin: 30px 5px 0 0;
+  font-weight: bold;
+}
+
+  /* ==========================================================================
+ * ユーザー登録、ログイン画面
+ * ========================================================================== */
+
+div.user__title{
+  width: 600px;
+  margin: 30px auto;
+}
+
+div.user__title p {
+  font-size: 30px;
+  text-align:center;
+  color: #69B587;
+  font-weight: bold;
+}
+
+ div.user__main{
+  background-color: #F1F8F2;
+  width: 600px;
+  height: auto;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 4px;
+ }
+
+ .user__form{
+  width: 100%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+ }
+
+ div.field{
+  margin: 20px 0;
+ }
+
+ .login__btn{
+  width: 100%;
+  border: 2px solid #69B587;
+  background-color: #69B587;
+  color: #CFF6DA;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+ }
+
+ .user__form_label{
+  color: #69B587;
+ }
+
+ div.new__user{
+  width: 600px;
+  margin: 30px auto;
+ }
+
+ div.new__user p {
+  font-size: 20px;
+  text-align:center;
+  font-weight: bold;
+}
+
+div.new__user p a {
+  text-decoration: none;
+  color: #69B587;
+}

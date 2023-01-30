@@ -1,6 +1,14 @@
-<br><%= @name %>のマイページ
-<br>
-<%= link_to "冷蔵庫に入れる", new_fridge_path, class: "post" %><br>
-<%= link_to "冷蔵庫の中身を確認する", fridges_path %><br>
-<%= link_to "食事を記録する", new_eat_path, class: "post" %><br>
-<%= link_to "食事記録を確認する", eats_path %><br>
+<div class="my__menu">
+  <div class="my__menu__title"><%= @name %>のマイページ</div>
+  <div class="my__menu__list">
+    <ul class="menu__list">
+    <li><%= link_to "冷蔵庫に入れる", new_fridge_path %></li>
+    <li><%= link_to "冷蔵庫の中身を確認する", fridges_path %></li>
+    <li><%= link_to "食事を記録する", new_eat_path %></li>
+    <li><%= link_to "食事記録を見る", eats_path %></li>
+   
+   </ul>
+  </div>
+</div>
+
+
