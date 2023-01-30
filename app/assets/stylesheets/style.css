@@ -214,3 +214,69 @@ div.send_btn {
   margin: 30px 5px 0 0;
   font-weight: bold;
 }
+
+  /* ==========================================================================
+ * ユーザー登録、ログイン画面
+ * ========================================================================== */
+
+div.user__title{
+  width: 600px;
+  margin: 30px auto;
+}
+
+div.user__title p {
+  font-size: 30px;
+  text-align:center;
+  color: #69B587;
+  font-weight: bold;
+}
+
+ div.user__main{
+  background-color: #F1F8F2;
+  width: 600px;
+  height: auto;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 4px;
+ }
+
+ .user__form{
+  width: 100%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+ }
+
+ div.field{
+  margin: 20px 0;
+ }
+
+ .login__btn{
+  width: 100%;
+  border: 2px solid #69B587;
+  background-color: #69B587;
+  color: #CFF6DA;
+  font-size: 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+ }
+
+ .user__form_label{
+  color: #69B587;
+ }
+
+ div.new__user{
+  width: 600px;
+  margin: 30px auto;
+ }
+
+ div.new__user p {
+  font-size: 20px;
+  text-align:center;
+  font-weight: bold;
+}
+
+div.new__user p a {
+  text-decoration: none;
+  color: #69B587;
+}
