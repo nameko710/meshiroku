@@ -2,23 +2,50 @@
   window.fridge_objects = <%= raw @fridges.to_json %>
 <% end %>
 
-<%= form_with model: [@eat, @form], url: eats_path, method: :post, local: true do |form| %>
+<%#食事記録テーブルに保存する中身%>
+
+<div class="form-main" >
+<div class="form-box" >
+<p>食事内容</p>
+  <%= form_with model: @form, url: eats_path, method: :post, local: true do |form| %>
     <%= form.text_field :title, placeholder: "タイトル" %>
     <%= form.file_field :image, placeholder: "写真を選ぶ" %>
     <%= form.text_field :comment, placeholder: "コメント" %>
     <%= form.date_field :date,  placeholder: "日付" %><br>
-  <%= form.fields_for :fridges do |form| %>
-    <div class="fridge-edit">
-     <%= form.collection_select :id, @fridges, :id, :food, include_blank:"使用した食材を選択" , name: "food"%>
-            在庫数
+    <%= form.number_field :price, placeholder: "金額" %>
+</div>
+</div>
+<%#ここまでが食事記録テーブルに保存する中身%>
+
+<div class="form-main" >
+<div class="form-box" >
+
+<p>使用する食材</p>
+<%#以下が増加する中身%>
+  <div id="demo-area" class="form-group">
+  <div class="unit input-group">
+    <%= form.fields_for :fridges do |f| %>
+      <div class="fridge-edit">
+        <%= f.collection_select :id, @fridges, :id, :food, include_blank:"使用した食材を選択" %>
+            在庫
             <span id='now-amount'></span><span id='unit1'></span>
   
-      <%= form.text_field :amount, placeholder: "使用する量" ,id: "amount"  %>
-            残数
-            <span id='remaining-amount'></span><span id='unit2'></span>
-            値段
-            <span id='using-price'></span>円
+        <%= f.number_field :amount, placeholder: "使用する量" %>
+        <span id='unit2'></span>
     </div>
+    <div class="demo-minus input-group-append">
+        <span class="btn btn-danger">−</span>
+      </div>
+
+          </div>
+  </div>
   <% end %>
-  <%= form.submit "投稿する" %>
-<% end %>
+<div id="demo-plus" class="btn btn-primary"><p>＋</p></div>
+<%#ここまでが増加する中身%>
+    <div class="send_btn"> <%= form.submit "食事を記録する", class:"fridge__send_btn"  %></div>
+  <% end %>
+
+
+</div>
+</div>
+
