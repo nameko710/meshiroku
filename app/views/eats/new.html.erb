@@ -3,7 +3,6 @@
 <% end %>
 
 <%#食事記録テーブルに保存する中身%>
-
 <div class="form-main" >
 <div class="form-box" >
 <p>食事内容</p>
@@ -12,39 +11,31 @@
     <%= form.file_field :image, placeholder: "写真を選ぶ" %>
     <%= form.text_field :comment, placeholder: "コメント" %>
     <%= form.date_field :date,  placeholder: "日付" %><br>
-    <%= form.number_field :price, placeholder: "金額" %>
-</div>
-</div>
+    <%= form.text_field :price, placeholder: "金額", class:"total__price" %>円
+
 <%#ここまでが食事記録テーブルに保存する中身%>
 
-<div class="form-main" >
-<div class="form-box" >
-
-<p>使用する食材</p>
-<%#以下が増加する中身%>
+  <p>使用した食材</p>
+  <%#以下が増加する中身%>
   <div id="demo-area" class="form-group">
-  <div class="unit input-group">
-    <%= form.fields_for :fridges do |f| %>
-      <div class="fridge-edit">
-        <%= f.collection_select :id, @fridges, :id, :food, include_blank:"使用した食材を選択" %>
-            在庫
-            <span id='now-amount'></span><span id='unit1'></span>
-  
-        <%= f.number_field :amount, placeholder: "使用する量" %>
-        <span id='unit2'></span>
-    </div>
-    <div class="demo-minus input-group-append">
+    <div class="unit input-group">
+
+      <%= form.fields_for :fridges, type:"text" do |f| %>
+          <%= f.collection_select :id, @fridges, :id, :food_amount_unit, {prompt: "使用した食材を選択"}, class:"food__id" %>
+          <span hidden class="select__id"></span>
+          <%= f.text_field :amount, placeholder: "使用する量", class:"food__amount" %>
+      <% end %>
+      <div class="demo-minus input-group-append">
         <span class="btn btn-danger">−</span>
       </div>
 
-          </div>
+    </div>
   </div>
-  <% end %>
-<div id="demo-plus" class="btn btn-primary"><p>＋</p></div>
-<%#ここまでが増加する中身%>
-    <div class="send_btn"> <%= form.submit "食事を記録する", class:"fridge__send_btn"  %></div>
-  <% end %>
-
+  <%#ここまでが増加する中身%>
+  <div id="demo-plus" class="btn btn-primary"><p>＋</p></div>
+ 
+      <div class="send_btn"> <%= form.submit "食事を記録する", class:"fridge__send_btn"  %></div>
+    <% end %>
 
 </div>
 </div>

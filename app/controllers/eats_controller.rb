@@ -10,6 +10,7 @@ class EatsController < ApplicationController
   end
 
   def create
+    binding.pry
     @eat = Eat.new(eat_params)
     @form = Form::FridgeCollection.new(fridge_collection_params)
       Eat.transaction do
