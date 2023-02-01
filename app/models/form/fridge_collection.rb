@@ -28,6 +28,8 @@ class Form::FridgeCollection < Form::Base
       self.fridges.map do |fridge|
           before_fridge = Fridge.find(fridge.id)
           after_amount = before_fridge.amount - fridge.amount
+          after_price = (before_fridge.price / before_fridge.amount * after_amount).floor
+          fridge["price"] = after_price
           before_fridge.update!(amount: after_amount)
       end
     end
