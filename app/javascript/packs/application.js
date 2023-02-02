@@ -8,6 +8,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
+import "chartkick/chart.js"
 require("../add-form")
 require("../eat")
 
