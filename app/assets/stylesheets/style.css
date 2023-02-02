@@ -121,7 +121,7 @@ body {
   }
 
   /* ==========================================================================
- * フォーム
+ * 食品登録、食事記録フォーム
  * ========================================================================== */
 
 div.btn {
@@ -158,6 +158,7 @@ div.form-main{
   width: 600px;
   height: auto;
   margin: 30px auto;
+  border-radius: 7px;
 }
 
 div.form-box{
@@ -215,6 +216,69 @@ div.send_btn {
   font-weight: bold;
 }
 
+.title__form {
+  width: 100%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+  margin-bottom: 15px;
+}
+
+.image__form {
+  width: 100%;
+  font-size: 20px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.comment__form {
+  width: 100%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+  margin-bottom: 15px;
+}
+
+.date__form {
+  width: 100%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+  margin-bottom: 15px;
+}
+
+.total__price {
+  width: 90%;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+  margin-bottom: 40px;
+}
+
+.food__id {
+  width: 250px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+}
+.food__amount {
+  width: 200px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid #69B587;
+}
+
+.form-box p{
+  margin: 10px 0 15px 0;
+  font-weight: bold;
+  color: #69B587;
+  margin-bottom: 20px;
+}
+
+.food__unit {
+  margin: 10px 0 15px 0;
+  font-weight: bold;
+}
   /* ==========================================================================
  * ユーザー登録、ログイン画面
  * ========================================================================== */

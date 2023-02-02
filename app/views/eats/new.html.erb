@@ -7,15 +7,21 @@
 <div class="form-box" >
 <p>食事内容</p>
   <%= form_with model: @form, url: eats_path, method: :post, local: true do |form| %>
-    <%= form.text_field :title, placeholder: "タイトル" %>
-    <%= form.file_field :image, placeholder: "写真を選ぶ" %>
-    <%= form.text_field :comment, placeholder: "コメント" %>
-    <%= form.date_field :date,  placeholder: "日付" %><br>
-    <%= form.text_field :price, placeholder: "金額", class:"total__price" %>円
+    <%= form.label :image, "タイトル" %>
+    <%= form.text_field :title, class:"title__form"%>
+    <%= form.label :image, "食事の写真" %>
+    <%= form.file_field :image, class:"image__form"%>
+    <%= form.label :comment, "コメント" %>
+    <%= form.text_area :comment, class:"comment__form" %>
+    <%= form.label :date, "日付" %>
+    <%= form.date_field :date, class:"date__form" %>
+    <%= form.label :date, "金額 （食材と数量を入力すると自動で入力されます）" %>
+    <%= form.text_field :price, placeholder: "食材と数量を選択してください", class:"total__price" %>円
 
 <%#ここまでが食事記録テーブルに保存する中身%>
 
   <p>使用した食材</p>
+  
   <%#以下が増加する中身%>
   <div id="demo-area" class="form-group">
     <div class="unit input-group">
@@ -24,6 +30,7 @@
           <%= f.collection_select :id, @fridges, :id, :food_amount_unit, {prompt: "使用した食材を選択"}, class:"food__id" %>
           <span hidden class="select__id"></span>
           <%= f.text_field :amount, placeholder: "使用する量", class:"food__amount" %>
+          <span class="food__unit"></span>
       <% end %>
       <div class="demo-minus input-group-append">
         <span class="btn btn-danger">−</span>

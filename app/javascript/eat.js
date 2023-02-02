@@ -7,8 +7,12 @@ $(function(){
   $('.food__id').on('change', function(){
     $('.food__id').each(function(i){
      var selectID = $(this).next('.select__id');
-     var selectFood = $(this).val();
+     var selectUnit = $(this).next().next().next();
+     var selectFood = Number($(this).val());
+     var recodeID = ((a) => {return a.id === selectFood })
+     var resultUnit = fridgeObjects.find(recodeID) 
      selectID.text(selectFood);
+     selectUnit.text(resultUnit.unit);
     })
   });
 
@@ -23,8 +27,6 @@ $(function(){
       var result = fridgeObjects.find(recode) 
       
       Price = Number(result.price) / Number(result.amount) * Number(inputAmount)
-      console.log(Price)
-
       addPrice = Math.floor(Number(addPrice) + Price)
     });
     
