@@ -1,0 +1,3 @@
+<div class="graph">
+<%= column_chart @eats.group_by_day(:date, last: 30).sum(:price) , colors: ["#69B587"], width: "600px", height: "500px" %>
+</div>
