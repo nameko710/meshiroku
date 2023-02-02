@@ -344,3 +344,25 @@ div.new__user p a {
   text-decoration: none;
   color: #69B587;
 }
+
+ /* ==========================================================================
+ * 食事一覧機能
+ * ========================================================================== */
+
+
+ .eat__index {
+  width: 600px;
+  margin: 0 auto;
+ }
+
+ .image-food{
+  width: 600px;
+  height: 600px;
+ }
+
+ .eat__list{
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 50px;
+  color: #69B587;
+ }

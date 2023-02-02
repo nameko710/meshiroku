@@ -1,8 +1,14 @@
+<div class="eat__index">
 <ul class='eat-lists'>
   <% @eats.each do |eat| %>
-    <li class='list'>
+    <li class='eat__list'>
+      <%= eat.date %><br>
       <%= eat.title %>
-      <%= image_tag eat.image.variant(resize: '200x200') %>
+      <%= image_tag eat.image.variant(resize: '400x400'), class:"image-food" %>
     </li>
+    
   <% end %>
 </ul>
+</div>
+
+

@@ -1,6 +1,6 @@
 class EatsController < ApplicationController
   def index
-    @eats = Eat.all
+    @eats = current_user.eats
   end
   
   def new
