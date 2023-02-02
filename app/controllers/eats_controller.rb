@@ -1,6 +1,6 @@
 class EatsController < ApplicationController
   def index
-    @eats = Eat.all
+    @eats = current_user.eats
   end
   
   def new
@@ -10,13 +10,16 @@ class EatsController < ApplicationController
   end
 
   def create
-     @eat = Eat.new(eat_params)
-     @form = Form::FridgeCollection.new(fridge_collection_params)
-    if @eat.save && @form.save
-      redirect_to action: :index
-    else
-    render :new
-    end
+    @eat = Eat.new(eat_params)
+    @form = Form::FridgeCollection.new(fridge_collection_params)
+      Eat.transaction do
+        @eat.save!
+        @form.update
+      end
+        redirect_to action: :index
+      rescue => e
+        @fridges = current_user.fridges
+        render :new
   end
 
   private
@@ -27,7 +30,7 @@ class EatsController < ApplicationController
 
     def fridge_collection_params
       params.require(:form_fridge_collection)
-      .permit(fridges_attributes: [:id, :amount, :price]).merge(user_id: current_user.id)
+      .permit(fridges_attributes: [:id, :amount]).merge(user_id: current_user.id)
     end
 
 end

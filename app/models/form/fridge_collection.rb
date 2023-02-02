@@ -1,6 +1,6 @@
 class Form::FridgeCollection < Form::Base
   FORM_COUNT = 1
-  attr_accessor :fridges, :user_id
+  attr_accessor :fridges, :user_id, :eats
 
   def initialize(attributes = {})
     super attributes
@@ -16,6 +16,20 @@ class Form::FridgeCollection < Form::Base
       self.fridges.map do |fridge|
         fridge["user_id"] = user_id
         fridge.save
+      end
+    end
+      return true
+    rescue => e
+      return false
+  end
+
+  def update
+    Fridge.transaction do
+      self.fridges.map do |fridge|
+          before_fridge = Fridge.find(fridge.id)
+          after_amount = before_fridge.amount - fridge.amount
+          after_price = (before_fridge.price / before_fridge.amount * after_amount).floor
+          before_fridge.update!(amount: after_amount, price: after_price)
       end
     end
       return true
