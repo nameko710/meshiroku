@@ -7,7 +7,7 @@ RSpec.describe Fridge, type: :model do
 
   describe '食品登録' do
     context '食品登録できるとき' do
-      it 'チェックボックスと食品名、個数、単位、値段が存在すれば登録できる' do
+      it '食品名、個数、単位、値段が存在すれば登録できる' do
         expect(@fridge).to be_valid
       end
     end
@@ -55,7 +55,6 @@ RSpec.describe Fridge, type: :model do
         expect(@fridge.errors.full_messages).to include "Price must be greater than or equal to 0"
       end
 
-      end
     end
   end
 end
