@@ -28,9 +28,8 @@ $(function(){
       
       Price = Number(result.price) / Number(result.amount) * Number(inputAmount)
       addPrice = Math.floor(Number(addPrice) + Price)
+      $('.total__price').val(addPrice);
     });
-    
-    $('.total__price').val(addPrice);
   });
 });
 
