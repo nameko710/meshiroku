@@ -376,3 +376,15 @@ div.new__user p a {
   margin: 30px auto;
   background-color: #F1F8F2;
 }
+
+div.graph_title {
+  width: 600px;
+  margin: 30px auto;
+}
+
+div.graph_title p {
+  text-align: center; 
+  font-size: 30px;
+  color: #69B587;
+  font-weight: bold;
+}
