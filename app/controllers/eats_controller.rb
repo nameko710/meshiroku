@@ -19,7 +19,7 @@ class EatsController < ApplicationController
         redirect_to action: :index
       rescue => e
         @fridges = current_user.fridges
-        redirect_to action: :new
+        render :new
   end
 
   private

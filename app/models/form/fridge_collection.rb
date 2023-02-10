@@ -14,8 +14,10 @@ class Form::FridgeCollection < Form::Base
   def save
     Fridge.transaction do
       self.fridges.map do |fridge|
-        fridge["user_id"] = user_id
-        fridge.save!
+        if fridge.food.present?
+          fridge["user_id"] = user_id
+          fridge.save!
+        end
       end
     end
       return true
@@ -26,6 +28,7 @@ class Form::FridgeCollection < Form::Base
   def update
     Fridge.transaction do
       self.fridges.map do |fridge|
+        if fridge.id.present?
           before_fridge = Fridge.find(fridge.id)
           after_amount = before_fridge.amount - fridge.amount
           if after_amount == 0
@@ -34,9 +37,10 @@ class Form::FridgeCollection < Form::Base
             after_price = (before_fridge.price / before_fridge.amount * after_amount).floor
             before_fridge.update!(amount: after_amount, price: after_price)
           end
+        end
       end
     end
-    rescue
+    rescue => e
       return render :new
   end
 end
