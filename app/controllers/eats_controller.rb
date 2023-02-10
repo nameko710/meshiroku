@@ -1,6 +1,6 @@
 class EatsController < ApplicationController
   def index
-    @eats = current_user.eats
+    @eats = current_user.eats.order("created_at DESC")
   end
   
   def new
