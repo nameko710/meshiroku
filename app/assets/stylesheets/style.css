@@ -169,27 +169,27 @@ div.form-box{
 }
 
 .food__form{
-  width: 40%;
+  width: 200px;
   font-size: 20px;
   border-radius: 4px;
   border: 2px solid #69B587;
 }
 .amount__form{
-  width: 15%;
+  width: 90px;
   font-size: 20px;
   border-radius: 4px;
   border: 2px solid #69B587;
 }
 
 .unit__form{
-  width: 10%;
+  width: 50px;
   font-size: 20px;
   border-radius: 4px;
   border: 2px solid #69B587;
 }
 
 .price__form{
-  width: 15%;
+  width: 90px;
   font-size: 20px;
   border-radius: 4px;
   border: 2px solid #69B587;

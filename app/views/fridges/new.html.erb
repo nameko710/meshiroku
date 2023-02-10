@@ -2,27 +2,31 @@
 <div class="form-box" >
 <%= form_with model: @form, url: fridges_path, method: :post, local: true do |form| %>
 
+<%= form.fields_for :fridges, type:"text" do |f| %>
+
+<%= render 'shared/error_messages', model: f.object %>
+
 <%#以下が増加する中身%>
   <div id="demo-area" class="form-group">
     <div class="unit input-group">
-      <%= form.fields_for :fridges, type:"text" do |f| %>
         <%= f.text_field :food, type:"text", placeholder: "食品名", class:"food__form" %>
         <%= f.text_field :amount, type:"text", placeholder: "数量", class:"amount__form" %>
         <%= f.text_field :unit, type:"text", placeholder: "単位", class:"unit__form" %>
         <%= f.text_field :price, type:"text", placeholder: "値段", class:"price__form" %>
         <p>円</p>
-      <% end %>
       <div class="demo-minus input-group-append">
         <span class="btn btn-danger">−</span>
       </div>
     </div>
   </div>
 <%#ここまでが増加する中身%>
-  
+
+  <% end %>
   <div id="demo-plus" class="btn btn-primary"><p>＋</p></div>
 
 
   <div class="send_btn"> <%= form.submit "冷蔵庫に入れる", class:"fridge__send_btn" %></div>
+  
 <% end %>
 
   </div>
